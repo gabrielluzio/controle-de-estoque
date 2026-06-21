@@ -12,7 +12,7 @@ class ConectarBanco:
             self.conexao = mysql.connector.connect(
                 host='localhost',
                 user='root',
-                password='Gabrielluzio1@',
+                password='SENHA',
                 database='estoque'
             )
             self.cursor = self.conexao.cursor()
