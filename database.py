@@ -1,11 +1,12 @@
 from sqlalchemy import create_engine, Column, Integer, String, Numeric
 from sqlalchemy.orm import sessionmaker, declarative_base
-from sqlalchemy.exc import SQLAlchemyError
+from dotenv import load_dotenv
+import os
 
+load_dotenv()
+URL_BANCO = os.getenv("DATABASE_URL")
 
-Banco_De_Dados = create_engine(
-   "mysql+pymysql://root:Gabrielluzio1%40@localhost/estoque"
-)
+Banco_De_Dados = create_engine(URL_BANCO)
 
 sessao = sessionmaker(bind=Banco_De_Dados)
 sessao_executavel = sessao()
